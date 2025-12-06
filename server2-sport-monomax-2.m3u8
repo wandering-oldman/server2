@@ -3,8 +3,10 @@
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115758&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
-http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115516&extension=m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://tv.greatstar.me:80/play/live.php?mac=A0:BB:3E:4D:2B:D3&stream=1660492&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://alpha-2ott.me:80/play/live.php?mac=00:1A:79:B6:5E:9B&stream=1660492&extension=m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115516&extension=m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=813034&extension=m3u8
