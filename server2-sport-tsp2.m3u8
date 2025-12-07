@@ -1,4 +1,17 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+# ตัวหลัก (url ที่ 1)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch1
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115533&extension=m3u8
+# ตัวหลัก (url ที่ 5)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch5
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115790&extension=m3u8
+# ตัวหลัก (url ที่ 2)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch2
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115534&extension=m3u8
+# ตัวหลัก (url ที่ 3)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch3
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=1776201&extension=m3u8
+# ตัวหลัก (url ที่ 6)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch6
+http://45.139.122.199:2095/play/live.php?mac=10:27:BE:50:20:50&stream=115541&extension=ts&play_token=IRUpSbTDY2
