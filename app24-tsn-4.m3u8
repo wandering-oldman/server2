@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#egaletv(US)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://egaletv.cc:80/play/live.php?mac=00:1A:79:A2:29:95&stream=12353&extension=m3u8
+
+#tv.greatstar(CA)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://tv.greatstar.me:80/play/live.php?mac=A0:BB:3E:4D:2B:D3&stream=904213&extension=m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://tv.greatstar.me:80/play/live.php?mac=A0:BB:3E:4D:2B:D3&stream=177347&extension=m3u8

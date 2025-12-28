@@ -1,0 +1,6 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#tv.greatstar(UK)
+http://tv.greatstar.me:80/play/live.php?mac=A0:BB:3E:4D:2B:D3&stream=91949&extension=m3u8
+
+
