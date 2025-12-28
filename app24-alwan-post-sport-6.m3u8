@@ -1,0 +1,8 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#egaletv(AR)
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://egaletv.cc:80/play/live.php?mac=00:1A:79:A2:29:95&stream=1641610&extension=m3u8
+
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://egaletv.cc:80/play/live.php?mac=00:1A:79:A2:29:95&stream=1641623&extension=m3u8
