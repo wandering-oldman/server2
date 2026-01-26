@@ -2,6 +2,9 @@
 #EXT-X-VERSION:3
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://snowbank.houseinventer.com/2793116/index.m3u8?
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=50275&extension=m3u8
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
