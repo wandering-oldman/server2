@@ -5,6 +5,8 @@ http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=280824&exten
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://alpha-2ott.me:80/play/live.php?mac=A0:BB:3E:E9:3E:BE&stream=1903773&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://alpha-2ott.me:80/play/live.php?mac=A0:BB:3E:E9:3E:BE&stream=941571&extension=m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=280829&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://line.greatstar.me:80/play/live.php?mac=A0:BB:3E:21:99:31&stream=941571&extension=m3u8
