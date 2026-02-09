@@ -2,6 +2,13 @@
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://alpha-2ott.me:80/play/live.php?mac=00:1A:79:B6:5E:9B&stream=30523&extension=m3u8
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/MLS003/qZj4zbPNDn/66869.m3u8
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/Georrgegov/zTjKE76BRe/66869.m3u8
+
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://line.greatstar.me:80/play/live.php?mac=A0:BB:3E:21:99:31&stream=1905841&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
