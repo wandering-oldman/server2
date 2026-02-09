@@ -1,7 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
-http://line.greatstar.me:80/play/live.php?mac=A0:BB:3E:21:99:31&stream=1905811&extension=ts&play_token=OTjuLyrIDz
+
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=303255&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
@@ -12,3 +11,5 @@ http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=309617&exten
 http://line.greatstar.me:80/play/live.php?mac=A0:BB:3E:21:99:31&stream=1905812&extension=m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=77415&extension=m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://line.greatstar.me:80/play/live.php?mac=A0:BB:3E:21:99:31&stream=1905811&extension=m3u8
