@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/MLS003/qZj4zbPNDn/18706.m3u8
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/Georrgegov/zTjKE76BRe/18706.m3u8
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/MLS003/qZj4zbPNDn/44981.m3u8
+
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://fastopen.live:8080/live/Georrgegov/zTjKE76BRe/44981.m3u8
