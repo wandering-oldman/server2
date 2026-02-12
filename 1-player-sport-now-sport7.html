@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Player Streaming Fixed</title>
+
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 { margin-bottom: 20px; color: #f1c40f; }
+
+        /* Streaming Area */
+        #player-wrapper {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            background-color: #000;
+            margin: 0 auto 20px auto;
+            border: 2px solid #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        video { width: 100%; height: 100%; object-fit: contain; }
+
+        /* Button Container */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Button Style */
+        .player-btn {
+            background-color: #FFD700;
+            color: black;
+            border: 2px solid #b89c00;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .player-btn:hover { background-color: #ffea70; }
+
+        /* Active State */
+        .player-btn.active {
+            background-color: #d63031;
+            color: white;
+            border: 3px solid #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .status-msg { margin-top: 10px; font-size: 0.9em; color: #aaa; }
+    </style>
+</head>
+<body>
+
+    <h2>Live Streaming Player (ผู้เฒ่าพเนจร)</h2>
+
+    <div id="player-wrapper">
+        <p style="color: #666;">เลือก Player ด้านล่างเพื่อเริ่มเล่น</p>
+    </div>
+
+    <div class="controls">
+        <!-- Web Players -->
+        <button class="player-btn" onclick="loadHlsJs(this)">HLS.js (Web)</button>
+        <button class="player-btn" onclick="loadVideoJs(this)">Video.js (Web)</button>
+        <button class="player-btn" onclick="loadJwPlayer(this)">JW Player (Web)</button>
+        
+        <!-- Android App Intents -->
+        <button class="player-btn" onclick="openMxPlayer(this)">MX Player</button>
+        <button class="player-btn" onclick="openWiseplay(this)">Wiseplay</button>
+        <button class="player-btn" onclick="openIptvPro(this)">IPTV Pro</button>
+        <button class="player-btn" onclick="openExoPlayer(this)">ExoPlayer (App)</button>
+    </div>
+
+    <div class="status-msg" id="status-text">Ready to stream</div>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+
+    <script>
+        const streamUrl = "https://wandering-oldman.github.io/server2/server2-sport-nowsport-7.m3u8
+";
+        const wrapper = document.getElementById('player-wrapper');
+        const statusText = document.getElementById('status-text');
+
+        function clearPlayer() {
+            wrapper.innerHTML = '';
+            if (window.videojsPlayer) {
+                window.videojsPlayer.dispose();
+                window.videojsPlayer = null;
+            }
+            if (window.jwplayer && jwplayer().remove) {
+                try { jwplayer().remove(); } catch(e) {}
+            }
+        }
+
+        function setActiveButton(btn, msg) {
+            document.querySelectorAll('.player-btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            if(msg) statusText.innerText = msg;
+        }
+
+        // --- Web Players (คงเดิม) ---
+        function loadHlsJs(btn) {
+            clearPlayer();
+            setActiveButton(btn, "Playing with HLS.js");
+            const video = document.createElement('video');
+            video.controls = true; video.autoplay = true;
+            wrapper.appendChild(video);
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(streamUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() { video.play(); });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamUrl;
+                video.play();
+            }
+        }
+
+        function loadVideoJs(btn) {
+            clearPlayer();
+            setActiveButton(btn, "Playing with Video.js");
+            const videoEl = document.createElement('video');
+            videoEl.id = 'my-video';
+            videoEl.className = 'video-js vjs-default-skin vjs-big-play-centered';
+            videoEl.controls = true;
+            const source = document.createElement('source');
+            source.src = streamUrl; source.type = 'application/x-mpegURL';
+            videoEl.appendChild(source);
+            wrapper.appendChild(videoEl);
+            window.videojsPlayer = videojs('my-video', { fluid: true, autoplay: true });
+        }
+
+        function loadJwPlayer(btn) {
+            clearPlayer();
+            setActiveButton(btn, "Playing with JW Player");
+            const div = document.createElement('div');
+            div.id = 'jw-player-container';
+            wrapper.appendChild(div);
+            jwplayer.key = 'eNFaXCjyURVoCCGiHp7HTQ3hDhE/AfL0g8VE1fRbL84=';
+            if (typeof jwplayer === 'function') {
+                jwplayer("jw-player-container").setup({
+                    file: streamUrl, width: "100%", height: "100%",
+                    autostart: true, type: "hls"
+                });
+            }
+        }
+
+        // --- FIXED: Helper Function for Intent Launch ---
+        function triggerIntent(intentUrl) {
+            const a = document.createElement('a');
+            a.href = intentUrl;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // --- Helper function to build correct intent URL ---
+        function buildIntentUrl(streamUrl, packageName, title = "Live Stream", referer = "https://320hds.com/", userAgent = "exo_player") {
+            // Remove protocol from stream URL for intent
+            const cleanUrl = streamUrl.replace(/^https?:\/\//, '');
+            
+            // Build intent string in correct format
+            return `intent://${cleanUrl}#Intent;` +
+                   `package=${packageName};` +
+                   `type=video/*;` +
+                   `S.referer=${encodeURIComponent(referer)}&userAgent=${userAgent};` +
+                   `S.title=${encodeURIComponent(title)};` +
+                   `scheme=https;` +
+                   `type=video/mp4;end`;
+        }
+
+        // --- 1. Fixed MX Player ---
+        function openMxPlayer(btn) {
+            setActiveButton(btn, "Opening MX Player...");
+            const intent = buildIntentUrl(
+                streamUrl, 
+                "com.mxtech.videoplayer.ad", 
+                "ผู้เฒ่าพเนจร-เล่นด้วย MX Player"
+            );
+            triggerIntent(intent);
+        }
+
+        // --- 2. Fixed Wiseplay ---
+        function openWiseplay(btn) {
+            setActiveButton(btn, "Opening Wiseplay...");
+            const intent = buildIntentUrl(
+                streamUrl,
+                "com.wiseplay",
+                "ผู้เฒ่าพเนจร-เล่นด้วย Wiseplay"
+            );
+            triggerIntent(intent);
+        }
+
+        // --- 3. Fixed IPTV Pro ---
+        function openIptvPro(btn) {
+            setActiveButton(btn, "Opening IPTV Pro...");
+            const intent = buildIntentUrl(
+                streamUrl,
+                "ru.iptvremote.android.iptv.pro",
+                "ผู้เฒ่าพเนจร-เล่นด้วย IPTV Pro"
+            );
+            triggerIntent(intent);
+        }
+
+        // --- 4. Fixed ExoPlayer (Universal Intent) ---
+        function openExoPlayer(btn) {
+            setActiveButton(btn, "Opening External Player (Exo/Just Player)...");
+            const cleanUrl = streamUrl.replace(/^https?:\/\//, '');
+            
+            // Generic intent for ExoPlayer-based apps
+            const intent = `intent://${cleanUrl}#Intent;` +
+                           `action=android.intent.action.VIEW;` +
+                           `type=video/*;` +
+                           `S.referer=${encodeURIComponent("https://320hds.com/")}&userAgent=exo_player;` +
+                           `S.title=${encodeURIComponent("ผู้เฒ่าพเนจร-เล่นด้วย ExoPlayer")};` +
+                           `scheme=https;` +
+                           `type=video/mp4;end`;
+            
+            triggerIntent(intent);
+        }
+
+    </script>
+</body>
+</html>
