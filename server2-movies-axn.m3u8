@@ -4,15 +4,27 @@
 # ตัวหลัก (url ที่ 1)
 #EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch1
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=1775981&extension=m3u8
-# ตัวหลัก (url ที่ 2)
+
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://ch-4k-top.org:80/play/live.php?mac=00:1A:79:69:23:AC&stream=1775981&extension=m3u8
+
 #EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch2
 http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=1776003&extension=m3u8
+
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://ch-4k-top.org:80/play/live.php?mac=00:1A:79:69:23:AC&stream=1776003&extension=m3u8
+
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=1280x720
+http://ch-4k-top.org:80/play/live.php?mac=00:1A:79:69:23:AC&stream=1776023&extension=m3u8
+
+#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch3
+http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=1776023&extension=m3u8
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
 http://fastopen.live:8080/live/MLS003/qZj4zbPNDn/8661.m3u8
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
-http://fastopen.live:8080/live/Georrgegov/zTjKE76BRe/8661.m3u8
+http://fastopen.live:8080/live/8gULQeqH3I/kbuahRdUJV/8661.m3u8
 
-#EXT-X-STREAM-INF:BANDWIDTH=2496000,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=ch3
-http://195.128.27.141:80/play/live.php?mac=00:1A:79:24:1B:18&stream=1776023&extension=m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=auto
+http://safetv.vip:8080/live/8gULQeqH3I/kbuahRdUJV/112200.m3u8
